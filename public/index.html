@@ -4,71 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../public/src/styles/main.css" type="text/css">
-    <link rel="stylesheet" href="../public/src/components/app/Header.css" type="text/css">
-    <link rel="stylesheet" href="../public/src/components/app/Footer.css" type="text/css">
+    <link rel="stylesheet" href="/public/src/styles/main.css" type="text/css">
+    <link rel="stylesheet" href="/public/src/components/app/Header.css" type="text/css">
+    <link rel="stylesheet" href="/public/src/components/app/Footer.css" type="text/css">
+    <link rel="stylesheet" href="/public/src/components/todos/TodoType.css" type="text/css">
+    <link rel="styleshnpeet" href="/public/src/components/todos/TodoTypeList.css" type="text/css">
+    <link rel="stylesheet" href="/public/src/components/todos/TodoForm.css" type="text/css">
+    <link rel="stylesheet" href="/public/src/components/app/App.css" type="text/css">
     <title>To-Do List</title>
 </head>
 <body>
     <header>
         <div id="title-images">
-            <img id="title" src="../public/assets/tofreakindo.png">
-            <img id="girl" src="../public/assets/girl.png">
+            <img id="title" src="/public/assets/tofreakindo.png">
+            <img id="girl" src="/public/assets/girl.png">
         </div>
         <h1>Your Girl Boss To-Do List</h1>
         <p>Rackin' up those to-dos with tons more on the way? Use this to-do list tool to keep track of what's going on in your busy life.</p>
     </header>
+    <div>
+        <main>
+            <div id="main-area">
+                <h2>Knock Em' Off:</h2>
+                <p>Go ahead and add a to-do, and then as soon as you've finished a task–knock it off!</p>
 
-    <main>
-        <div id="main-area">
-            <h2>Knock Em' Off:</h2>
-            <p>Go ahead and add a to-do, and then as soon as you've finished a task–knock it off!</p>
-
-            <section class="form-section">
-                <form class="to-do-form">
-                    <div id="button-area">
-                        <input name="to-do-input" required>
-                        <button>Add To-Do</button>
-                    </div>
-                    <ul id="todo-list-items">
-                        <li>
-                            <span class="dishes">Dishes</span>
-                            <div>
-                                <button class="activate-button">
-                                    Activate
-                                </button>
-                                <button id="x">
-                                    X
-                                </button>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="dishes">Taxes</span>
-                            <div>
-                                <button class="activate-button">
-                                    Activate
-                                </button>
-                                <button id="x">
-                                    X
-                                </button>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="dishes">Laundry</span>
-                            <div>
-                                <button class="activate-button">
-                                    Activate
-                                </button>
-                                <button id="x">
-                                    X
-                                </button>
-                            </div>
-                        </li>
-                    </ul>
-                </form>
-            </section>
-        </div>
-    </main>
+                <section class="form-section">
+                    <form class="to-do-form">
+                        <div id="button-area">
+                            <input name="to-do-input" required>
+                            <button>Add To-Do</button>
+                        </div>
+                        <ul id="todo-list-items">
+                            <li>
+                                <span class="dishes">Dishes</span>
+                                <div>
+                                    <button class="activate-button">
+                                        Activate
+                                    </button>
+                                    <button id="x">
+                                        X
+                                    </button>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="dishes">Taxes</span>
+                                <div>
+                                    <button class="activate-button">
+                                        Activate
+                                    </button>
+                                    <button id="x">
+                                        X
+                                    </button>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="dishes">Laundry</span>
+                                <div>
+                                    <button class="activate-button">
+                                        Activate
+                                    </button>
+                                    <button id="x">
+                                        X
+                                    </button>
+                                </div>
+                            </li>
+                        </ul>
+                    </form>
+                </section>
+            </div>
+        </main>
+    </div>
     <footer>
         <p>&copy; abbey</p>
     </footer>

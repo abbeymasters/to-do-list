@@ -1,3 +1,4 @@
+
 /* eslint-disable */
 
 // include jsdom for DOM use in tests on travis
@@ -14,4 +15,4 @@ global.sessionStorage = window.sessionStorage;
 global.URLSearchParams = window.URLSearchParams;
 
 require = require('esm')(module);
-module.exports = require('./tests.js.js');
+module.exports = require('./tests.js');
