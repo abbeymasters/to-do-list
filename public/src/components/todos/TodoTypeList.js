@@ -1,16 +1,16 @@
 import Component from '../Component.js';
-import TodoType from '../todos/TodoType.js';
+import TodoType from './TodoType.js';
 
 class TodoTypeList extends Component {
 
-    onRender(list) {
+    onRender(todoList) {
         const todos = this.props.todos;
         const onUpdate = this.props.onUpdate;
         const onRemove = this.props.onRemove;
 
         todos.forEach(todo => {
             const todoType = new TodoType({ todo, onUpdate, onRemove });
-            list.appendChild(todoType.renderDOM());
+            todoList.appendChild(todoType.renderDOM());
         });
     }
 

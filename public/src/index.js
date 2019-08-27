@@ -1,4 +1,4 @@
-import App from './components/app/App.js';
+import TodoListApp from './components/app/TodoListApp.js';
 
-const app = new App();
-document.body.prepend(app.renderDOM());
+const listApp = new TodoListApp();
+document.body.prepend(listApp.renderDOM());

@@ -7,13 +7,13 @@ class TodoType extends Component {
         const onUpdate = this.props.onUpdate;
         const onRemove = this.props.onRemove;
 
-        const inactivebutton = dom.querySelector('activate-button');
+        const inactivebutton = dom.querySelector('.activate-button');
         inactivebutton.addEventListener('click', () => {
             todo.inactive = !todo.inactive;
             onUpdate(todo);
         });
 
-        const removeButton = dom.querySelector('x');
+        const removeButton = dom.querySelector('#x');
         removeButton.addEventListener('click', () => {
             if(confirm(`Are you sure you want to remove "${todo.name}"?`)) {
                 onRemove(todo);
@@ -21,24 +21,21 @@ class TodoType extends Component {
         });
     }
 
-
     renderHTML() {
-
         const todo = this.props.todo;
-
         return /*html*/`
-    <li>
-        <span class="${todo.inactive ? 'inactive' : ''}">${todo.name}</span>
-        <div>
-            <button class="activate-button">
-                Make ${todo.inactive ? 'Active' : 'Inactive'}
-            </button>
-            <button id="x">
-                X
-            </button>
-        </div>
-    </li>
-    `;
+            <li>
+                <span class="${todo.inactive ? 'inactive' : ''}">${todo.name}</span>
+                <div>
+                    <button class="activate-button">
+                        Make ${todo.inactive ? 'Active' : 'Inactive'}
+                    </button>
+                    <button id="x">
+                        X
+                    </button>
+                </div>
+            </li>
+            `;
     }
 }
 

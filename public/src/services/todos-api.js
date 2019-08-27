@@ -27,12 +27,12 @@ export function addTodo(todo) {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(todo);
+        body: JSON.stringify(todo)
     });
 }
 
 export function updateTodo(todo) {
-    const URL = `${URL}/todos/${todo.id}`;
+    const url = `${URL}/todos/${todo.id}`;
     return fetchWithError(url, {
         method: 'PUT',
         headers: {

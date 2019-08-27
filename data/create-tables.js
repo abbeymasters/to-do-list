@@ -15,7 +15,7 @@ client.connect()
             CREATE TABLE todos (
                 id SERIAL PRIMARY KEY NOT NULL,
                 name VARCHAR(256) NOT NULL UNIQUE,
-                inactive BOOLEAN NOT NULL DEFAULT FALSE
+                finished BOOLEAN NOT NULL DEFAULT FALSE
             );
         `);
     })
