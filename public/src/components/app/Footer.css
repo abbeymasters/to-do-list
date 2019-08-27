@@ -1,0 +1,14 @@
+footer {
+    background-color: #fcdad0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px; 
+}
+
+footer p {
+    color: #ee6312;
+    font-family: Roboto;
+    font-weight: 900;
+    text-align: center;
+}
