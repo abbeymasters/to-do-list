@@ -5,7 +5,6 @@ import TodoTypeList from '../todos/TodoTypeList.js';
 import TodoForm from '../todos/TodoForm.js';
 import { getTodos, addTodo, updateTodo, removeTodo } from '../../services/todos-api.js';
 
-
 class TodoListApp extends Component {
 
     onRender(dom) {
@@ -17,15 +16,16 @@ class TodoListApp extends Component {
 
         const main = dom.querySelector('main');
 
-        const todoForm = new TodoForm();
+        const todoForm = new TodoForm({
+            onAdd: todo => {
                 return addTodo(todo)
                     .then(saved => {
                         const todos = this.state.todos;
                         todos.push(saved);
                         todoList.update({ todos });
-                    })
+                    });
             }
-        };
+        });
         main.appendChild(todoForm.renderDOM());
 
         const todoList = new TodoTypeList({
@@ -39,7 +39,7 @@ class TodoListApp extends Component {
                         todos.splice(index, 1, updated);
 
                         todoList.update({ todos });
-                    })
+                    });
             },
             onRemove: todo => {
                 return removeTodo(todo.id)
@@ -50,7 +50,7 @@ class TodoListApp extends Component {
                         todos.splice(index, 1);
 
                         todoList.update({ todos });
-                    })
+                    });
             }
         });
         main.appendChild(todoList.renderDOM());
@@ -61,15 +61,16 @@ class TodoListApp extends Component {
                 todoList.update({ todos });
             })
             .catch(err => {
+                // eslint-disable-next-line no-console
                 console.log(err);
-            })
+            });
     }
-
 
     renderHTML() {
         return /*html*/`
         <div>
-            <main></main>
+            <main>
+            </main>
         </div>
         `;
     }
