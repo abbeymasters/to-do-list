@@ -1,15 +1,23 @@
 // Load Environment Variables from the .env file
 require('dotenv').config();
 
+// make sure .env has been loaded
+require('dotenv').config();
+// "require" pg (after `npm i pg`)
+const pg = require('pg');
+// Use the pg Client
+const Client = pg.Client;
+// note: you will need to create the database!
+const client = new Client(process.env.DATABASE_URL);
+// export the client
+module.exports = client;
+
 // Application Dependencies
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
-const pg = require('pg');
 
 // Database Client
-const Client = pg.Client;
-const client = new Client(process.env.DATABASE_URL);
 client.connect();
 
 // Application Setup
@@ -17,12 +25,13 @@ const app = express();
 const PORT = process.env.PORT;
 app.use(morgan('dev')); // http logging
 app.use(cors()); // enable CORS request
-app.use(express.static('public'));
-app.use(express.json()); 
+app.use(express.static('public')); // enable serving files from public
+app.use(express.json()); // enable reading incoming json data
+
 
 app.get('/api/todos', (req, res) => {
     const showAll = (req.query.show && req.query.show.toLowerCase() === 'all');
-    const where = showAll ? '' : 'WHERE inactive = FALSE';
+    const where = showAll ? '' : 'WHERE finished = FALSE';
 
     client.query(`
         SELECT
@@ -34,7 +43,6 @@ app.get('/api/todos', (req, res) => {
         ORDER BY name;
     `)
         .then(result => {
-            console.log('sending');
             res.json(result.rows);
         })
         .catch(err => {
@@ -74,8 +82,8 @@ app.put('/api/todos/:id', (req, res) => {
 
     client.query(`
         UPDATE todos
-        SET     name = $2,
-                inactive = $3
+        SET name = $2,
+            finished = $3
         WHERE   id = $1
         RETURNING *;
     `,
