@@ -1,2 +1,2 @@
 import './TodoType.test.js';
-import '.html-equal.test';
+import './html-equal.test.js';
