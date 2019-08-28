@@ -1,9 +1,4 @@
-main {
-    border-left: solid 3px #fcdad0;
-    margin-left: 375px;
-    display: flex;
-    flex-direction: column;
-}
+
 
 h2 {
     font-size: 24px;

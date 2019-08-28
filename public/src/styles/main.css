@@ -14,6 +14,50 @@ form input {
     height: 18px;
     font-family: Roboto;
     font-weight: 900;
+    width: 175px;
+}
+
+.auth-form {
+    margin-left: 50px;
+    margin-top: 100px;
+}
+
+main {
+    border-left: solid 3px #fcdad0;
+    margin-left: 375px;
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+}
+
+.sign-up {
+    padding: 6px 30px;
+    border-radius: 5px;
+    background-color: #5e783a;
+    color: white;
+    font-family: Roboto;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-top: 10px;
+}
+
+.sign-up:hover {
+    padding: 6px 30px;
+    border-radius: 5px;
+    background-color: #5e783a;
+    color: #fcdad0;
+    font-family: Roboto;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-top: 10px;
+    border-color: #fcdad0;
+    box-shadow: 0px 1px 3px #fcdad0;
 }
 
 
+h2 {
+    font-size: 24px;
+    font-family: Roboto;
+    font-weight: 900;
+    color: white;
+}
