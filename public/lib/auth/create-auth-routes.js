@@ -62,4 +62,4 @@ module.exports = function createAuthRoutes(queries) {
             });
     });
     return router;
-}
+};
