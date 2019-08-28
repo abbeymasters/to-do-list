@@ -20,6 +20,30 @@ const morgan = require('morgan');
 // Database Client
 client.connect();
 
+// Auth
+const ensureAuth = require('./public/lib/auth/ensure-auth');
+const createAuthRoutes = require('./public/lib/auth/create-auth-routes.js');
+const authRoutes = createAuthRoutes({
+    selectUser(email) {
+        return client.query(`
+            SELECT id, email, hash, display_name as "displayName"
+            FROM users
+            WHERE email = $1;
+        `,
+        [email]
+        ).then(result => result.rows[0]);
+    },
+    insertUser(user, hash) {
+        return client.query(`
+            INSERT INTO users (email, hash, display_name)
+            VALUES ($1, $2, $3)
+            RETURNING id, email, display_name as "displayName";
+        `,
+        [user.email, hash, user.displayName]
+        ).then(result => result.rows[0]);
+    }
+});
+
 // Application Setup
 const app = express();
 const PORT = process.env.PORT;
@@ -28,6 +52,11 @@ app.use(cors()); // enable CORS request
 app.use(express.static('public')); // enable serving files from public
 app.use(express.json()); // enable reading incoming json data
 
+// setting up authentication routes
+app.use('/api/auth', authRoutes);
+
+// everything that starts with "/api" below here requires an auth token!
+app.use('/api', ensureAuth);
 
 app.get('/api/todos', (req, res) => {
     const showAll = (req.query.show && req.query.show.toLowerCase() === 'all');
@@ -127,6 +156,12 @@ app.delete('/api/todos/:id', (req, res) => {
                 error: err.message || err
             });
         }); 
+});
+
+app.get('/api/test', (req, res) => {
+    res.json({
+        message: `the user's id is ${req.userId}`
+    });
 });
 
 //Starting Server
