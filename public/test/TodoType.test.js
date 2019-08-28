@@ -14,18 +14,18 @@ test('todo to render', assert => {
     };
 
     const expected = /*html*/`
-    <li>
-        <span class="${todo.inactive ? 'inactive' : ''}">${todo.name}</span>
-        <div>
-            <button class="activate-button">
-                Make ${todo.inactive ? 'Active' : 'Inactive'}
-            </button>
-            <button id="x">
-                X
-            </button>
-        </div>
-    </li>
-    `;
+            <li>
+                <span class="${todo.inactive ? 'inactive' : ''}">${todo.name}</span>
+                <div>
+                    <button class="activate-button">
+                        Mark ${todo.inactive ? 'Complete' : 'Not Complete'}
+                    </button>
+                    <button id="x">
+                        X
+                    </button>
+                </div>
+            </li>
+            `;
 
     // act
     const todoType = new TodoType({ todo });
