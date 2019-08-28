@@ -3,4 +3,17 @@ body {
     background-color: #5e783a;
 }
 
+p { 
+    font-family: Roboto;
+    font-weight: 900;
+}
+
+form input {
+    margin-left: 10px;
+    border-radius: 5px;
+    height: 18px;
+    font-family: Roboto;
+    font-weight: 900;
+}
+
 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./src/styles/main.css">
+    <link rel="stylesheet" href="./src/components/app/Header.css">
+    <link rel="stylesheet" href="./src/components/app/Footer.css">
+    <title>Girl Boss To-Do List</title>
+</head>
+<body>
+
+            <header>
+                <div id="title-images">
+                    <img id="title" src="./assets/tofreakindo.png">
+                    <img id="girl" src="./assets/girl.png">
+                </div>
+                <h1>Your Girl Boss To-Do List</h1>
+                <p>Rackin' up those to-dos with tons more on the way? Use this to-do list tool to keep track of what's going on in your busy life.</p>
+            </header>
+
+    <form class="auth-form standard">
+        <p>
+            <label for="name">Name:</label>
+            <input id="name" name="name" required placeholder="Name">
+        </p>
+        <p>
+            <label for="email">Email:</label>
+            <input id="email" type="email" name="email" required placeholder="youremail@gmail.com">
+        </p>
+        <p>
+            <label for="password">Password:</label>
+            <input id="password" type="password" name="password" required>
+        </p>
+        <p>
+            <button>Sign Up</button>
+        </p>
+    </form>
+    <script type="module" src="src/auth.js"></script>
+</body>
+</html>

@@ -10,6 +10,7 @@ class TodoType extends Component {
         const inactivebutton = dom.querySelector('.activate-button');
         inactivebutton.addEventListener('click', () => {
             todo.inactive = !todo.inactive;
+            window.location.reload();
             onUpdate(todo);
         });
 
