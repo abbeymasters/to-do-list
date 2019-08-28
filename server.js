@@ -56,7 +56,7 @@ app.use(express.json()); // enable reading incoming json data
 app.use('/api/auth', authRoutes);
 
 // everything that starts with "/api" below here requires an auth token!
-// git st
+app.use('/api', ensureAuth);
 
 app.get('/api/todos', (req, res) => {
     const showAll = (req.query.show && req.query.show.toLowerCase() === 'all');
@@ -160,7 +160,7 @@ app.delete('/api/todos/:id', (req, res) => {
 
 app.get('/api/test', (req, res) => {
     res.json({
-        message: `the user's id is ${req.userId}`
+        message: `The user's id is ${req.userId}!`
     });
 });
 
