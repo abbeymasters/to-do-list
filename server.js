@@ -28,12 +28,13 @@ app.get('/api/todos', (req, res) => {
         SELECT
             id, 
             name,
-            inactive
+            finished AS inactive
         FROM todos
         ${where}
         ORDER BY name;
     `)
         .then(result => {
+            console.log('sending');
             res.json(result.rows);
         })
         .catch(err => {

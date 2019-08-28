@@ -42,6 +42,7 @@ class TodoForm extends Component {
                             <button>Add To-Do</button>
                         </div>
                     </form>
+                    <p class="error"></p>
                 </section>
             </div>
         `;

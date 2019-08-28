@@ -23,12 +23,13 @@ class TodoType extends Component {
 
     renderHTML() {
         const todo = this.props.todo;
+        console.log('listItem');
         return /*html*/`
             <li>
                 <span class="${todo.inactive ? 'inactive' : ''}">${todo.name}</span>
                 <div>
                     <button class="activate-button">
-                        Make ${todo.inactive ? 'Active' : 'Inactive'}
+                        Mark ${todo.inactive ? 'Complete' : 'Not Complete'}
                     </button>
                     <button id="x">
                         X
