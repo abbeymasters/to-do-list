@@ -23,7 +23,6 @@ class TodoType extends Component {
 
     renderHTML() {
         const todo = this.props.todo;
-        console.log('listItem');
         return /*html*/`
             <li>
                 <span class="${todo.inactive ? 'inactive' : ''}">${todo.name}</span>

@@ -5,7 +5,6 @@ class TodoTypeList extends Component {
 
     onRender(todoList) {
         const todos = this.props.todos;
-        console.log(todos);
         const onUpdate = this.props.onUpdate;
         const onRemove = this.props.onRemove;
 
@@ -16,7 +15,6 @@ class TodoTypeList extends Component {
     }
 
     renderHTML() {
-        console.log('list');
         return /*html*/`
             <ul id="todo-list-items"></ul>
         `;
