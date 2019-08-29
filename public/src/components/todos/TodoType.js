@@ -29,7 +29,7 @@ class TodoType extends Component {
                 <span class="${todo.inactive ? 'inactive' : ''}">${todo.name}</span>
                 <div>
                     <button class="activate-button">
-                        Mark ${todo.inactive ? 'Complete' : 'Not Complete'}
+                        Mark ${todo.inactive ? 'Not Complete' : 'Complete'}
                     </button>
                     <button id="x">
                         X
