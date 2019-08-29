@@ -68,7 +68,7 @@ class TodoListApp extends Component {
 
     renderHTML() {
         return /*html*/`
-        <div>
+        <div id="whole-body">
             <main>
             </main>
         </div>
