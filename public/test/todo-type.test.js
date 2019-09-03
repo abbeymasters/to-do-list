@@ -13,19 +13,25 @@ test('todo to render', assert => {
         inactive: false
     };
 
+    let users = {
+        friends: {
+            name : 'abbey'
+        },
+        otherFriends: {
+            name: 'josh'
+        }
+    };
+
     const expected = /*html*/`
-            <li>
-                <span class="${todo.inactive ? 'inactive' : ''}">${todo.name}</span>
-                <div>
-                    <button class="activate-button">
-                        Mark ${todo.inactive ? 'Not Complete' : 'Complete'}
-                    </button>
-                    <button id="x">
-                        X
-                    </button>
-                </div>
-            </li>
-            `;
+        <ul>
+        ${users.map(user => {
+        console.log(return /*html*/`
+        <li>${user.name}</li>
+        `;   
+    })})
+        </ul>
+    `;
+    
 
     // act
     const todoType = new TodoType({ todo });
