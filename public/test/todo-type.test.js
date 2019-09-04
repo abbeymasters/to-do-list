@@ -13,6 +13,15 @@ test('todo to render', assert => {
         inactive: false
     };
 
+    let users = {
+        friends: {
+            name : 'abbey'
+        },
+        otherFriends: {
+            name: 'josh'
+        }
+    };
+
     const expected = /*html*/`
             <li>
                 <span class="${todo.inactive ? 'inactive' : ''}">${todo.name}</span>
