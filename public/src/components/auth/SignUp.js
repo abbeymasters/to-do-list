@@ -26,15 +26,15 @@ class SignUp extends Component {
                 <h2>Sign Up!</h2>
                 <p>
                     <label for="name">Name:</label>
-                    <input id="name" name="name" required placeholder="Name">
+                    <input id="signup-name" name="name" required placeholder="Name">
                 </p>
                 <p>
                     <label for="email">Email:</label>
-                    <input id="email" type="email" name="email" required placeholder="youremail@gmail.com">
+                    <input id="signup-email" type="email" name="email" required placeholder="youremail@gmail.com">
                 </p>
                 <p>
                     <label for="password">Password:</label>
-                    <input id="password" type="password" name="password" required>
+                    <input id="signup-password" type="password" name="password" required>
                 </p>
                 <p>
                     <button class="sign-up">Sign Up</button>
