@@ -64,17 +64,6 @@ export function removeTodo(id) {
     });
 }
 
-export function signIn(credentials) {
-    const url = `${URL}/auth/signin`;
-    return fetchWithError(url, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(credentials)
-    });
-}
-
 export function signUp(user) {
     const url = `${URL}/auth/signup`;
     return fetchWithError(url, {
@@ -83,5 +72,16 @@ export function signUp(user) {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(user)
+    });
+}
+
+export function signIn(credentials) {
+    const url = `${URL}/auth/signin`;
+    return fetchWithError(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(credentials)
     });
 }
