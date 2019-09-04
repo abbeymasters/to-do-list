@@ -1,0 +1,39 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+}
+
+#button-area input {
+    width: 150px;
+    border-radius: 5px;
+    height: 18px;
+    font-family: Roboto;
+    font-weight: 900;
+    color: #ee6312;
+}
+
+button {
+    width: 125px;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #5e783a;
+    margin-left: 5px;
+    color: white;
+    font-family: Roboto;
+    text-transform: uppercase;
+}
+
+#inputs {
+    margin-top: 20px;
+    color: white;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+#input-box {
+    display: flex;
+    align-content: center;
+    margin-bottom: 15px;
+}

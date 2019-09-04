@@ -1,0 +1,90 @@
+
+body {
+    background-color: #5e783a;
+}
+
+p { 
+    font-family: Roboto;
+    font-weight: 900;
+}
+
+form input {
+    margin-left: 10px;
+    border-radius: 5px;
+    height: 18px;
+    font-family: Roboto;
+    font-weight: 900;
+    width: 175px;
+    color: #ee6312;
+}
+
+.auth-form {
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+main {
+    border-left: solid 3px #fcdad0;
+    margin-left: 375px;
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+}
+
+.sign-up {
+    padding: 6px 30px;
+    border-radius: 5px;
+    background-color: #5e783a;
+    color: white;
+    font-family: Roboto;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-top: 10px;
+}
+
+.sign-up:hover {
+    padding: 6px 30px;
+    border-radius: 5px;
+    background-color: #5e783a;
+    color: #fcdad0;
+    font-family: Roboto;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-top: 10px;
+    border-color: #fcdad0;
+    box-shadow: 0px 1px 3px #fcdad0;
+}
+
+
+h2 {
+    font-size: 24px;
+    font-family: Roboto;
+    font-weight: 900;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+#signin-button, #signup-button {
+    padding: 6px 30px;
+    border-radius: 5px;
+    background-color: #5e783a;
+    color: white;
+    font-family: Roboto;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-top: 50px;
+    margin-left: 40px;
+}
+
+#signin-button:hover, #signup-button:hover {
+    border-color: #fcdad0;
+    box-shadow: 0px 1px 3px #fcdad0;
+}
+
+.errors {
+    margin-left: 40px;
+    color: #ee6312;
+}
