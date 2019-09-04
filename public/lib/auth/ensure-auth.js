@@ -12,11 +12,11 @@ module.exports = function checkAuth(req, res, next) {
         payload = jwt.verify(token);
     }
     catch(err) {
+        // this code runs with verify fails
         res.status(401).json({ error: 'invalid token' });
         return;
     }
 
     req.userId = payload.id;
     next();
-
 };
